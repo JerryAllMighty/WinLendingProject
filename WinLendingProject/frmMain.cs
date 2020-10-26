@@ -35,7 +35,7 @@ namespace WinLendingProject
 
         private void 도서관리ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BookManagement b1 = new BookManagement();
+            frmBook b1 = new frmBook();
             b1.MdiParent = this;
             b1.Show();
             b1.Activate();

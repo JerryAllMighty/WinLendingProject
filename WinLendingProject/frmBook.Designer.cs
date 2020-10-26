@@ -1,6 +1,6 @@
 ﻿namespace WinLendingProject
 {
-    partial class BookManagement
+    partial class frmBook
     {
         /// <summary>
         /// Required designer variable.
@@ -36,9 +36,10 @@
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(187, 349);
+            this.btnInsert.Location = new System.Drawing.Point(14, 436);
+            this.btnInsert.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(143, 77);
+            this.btnInsert.Size = new System.Drawing.Size(163, 96);
             this.btnInsert.TabIndex = 4;
             this.btnInsert.Text = "등록";
             this.btnInsert.UseVisualStyleBackColor = true;
@@ -46,9 +47,10 @@
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(12, 349);
+            this.btnSelect.Location = new System.Drawing.Point(183, 437);
+            this.btnSelect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(143, 77);
+            this.btnSelect.Size = new System.Drawing.Size(163, 96);
             this.btnSelect.TabIndex = 3;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = true;
@@ -57,23 +59,26 @@
             // dgvMember
             // 
             this.dgvMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMember.Location = new System.Drawing.Point(12, 12);
+            this.dgvMember.Location = new System.Drawing.Point(14, 15);
+            this.dgvMember.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvMember.Name = "dgvMember";
+            this.dgvMember.RowHeadersWidth = 51;
             this.dgvMember.RowTemplate.Height = 23;
-            this.dgvMember.Size = new System.Drawing.Size(776, 331);
+            this.dgvMember.Size = new System.Drawing.Size(887, 414);
             this.dgvMember.TabIndex = 2;
             this.dgvMember.TabStop = false;
             // 
-            // BookManagement
+            // frmBook
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 562);
             this.ControlBox = false;
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.dgvMember);
-            this.Name = "BookManagement";
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "frmBook";
             this.Text = "BookManagement";
             this.Load += new System.EventHandler(this.BookManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMember)).EndInit();

@@ -10,47 +10,40 @@ using System.Windows.Forms;
 
 namespace WinLendingProject
 {
-    public partial class frmStudentInsUp : Form
+    public partial class frmBookIns : Form
     {
-        public Student StudentInfo {
+        public Book BookInfo
+        {
             get
-            { return new Student(int.Parse(txtStudentID.Text), txtStudentName.Text, txtStudentDepartment.Text); } 
+            { return new Book(int.Parse(txtBookID.Text), txtBookName.Text, txtBookAuthor.Text); }
             //set;
         }
-        public frmStudentInsUp()
+        public frmBookIns()
         {
             InitializeComponent();
         }
-
-        private void txtStudentID_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar != '\b' && !char.IsNumber(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
+       
         private void btnOK_Click(object sender, EventArgs e)
         {
             //유효성체크
             StringBuilder sb = new StringBuilder();
-            
-            if (txtStudentID.Text.Length < 10)
+
+            if (txtBookID.Text.Length < 10)
             {
-                sb.AppendLine("학번은 10자리로 입력하세요.");
+                sb.AppendLine("책번호는 10자리로 입력하세요.");
                 //return;
             }
 
-            if (string.IsNullOrEmpty(txtStudentName.Text))
+            if (string.IsNullOrEmpty(txtBookName.Text))
             {
-                sb.AppendLine("학생명을 입력하세요.");
-             
+                sb.AppendLine("책 이름을 입력하세요.");
+
             }
             if (sb.ToString().Length > 0)
             {
                 MessageBox.Show(sb.ToString());
             }
-            else 
+            else
             {
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -58,9 +51,17 @@ namespace WinLendingProject
             }
         }
 
-        private void frmStudentInsUp_Load(object sender, EventArgs e)
+        private void frmBookIns_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtBookID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

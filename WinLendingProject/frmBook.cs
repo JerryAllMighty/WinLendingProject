@@ -10,22 +10,33 @@ using System.Windows.Forms;
 
 namespace WinLendingProject
 {
-    public partial class frmStudent : Form
+    public partial class frmBook : Form
     {
-        public frmStudent()
+        public frmBook()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)      //추가를 눌렀을 떄
+        private void BookManagement_Load(object sender, EventArgs e)
         {
-            frmStudentInsUp frm = new frmStudentInsUp();
+            LoadData();
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            BookDB db = new BookDB();
+            db.GetAllData();
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            frmBookIns frm = new frmBookIns();
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 //입력받은 값으로 DB에 저장
-                Student stu = frm.StudentInfo;
-                StudentDB db = new StudentDB();
-                bool result = db.Insert(stu);
+                Book book = frm.BookInfo;
+                BookDB db = new BookDB();
+                bool result = db.Insert(book);
                 db.Dispose();
                 if (result)
                 {
@@ -37,18 +48,12 @@ namespace WinLendingProject
             }
         }
 
-        private void frmStudent_Load(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
         private void LoadData()
         {
-            StudentDB db = new StudentDB();
+            BookDB db = new BookDB();
             DataTable dt = db.GetAllData();
             db.Dispose();
-            dataGridView1.DataSource = dt;
+            dgvMember.DataSource = dt;
         }
-
     }
 }
