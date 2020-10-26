@@ -8,5 +8,6 @@ namespace WinLendingProject
 {
     class BookDB
     {
+
     }
 }
